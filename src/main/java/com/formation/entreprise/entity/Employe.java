@@ -1,14 +1,22 @@
-package jpa;
+package com.formation.entreprise.entity;
 
 import java.math.BigDecimal;
 
-/** 
- * Un employé de l'entreprise.
+/**
+ * Un employï¿½ de l'entreprise.
  */
 public class Employe extends Personne {
 	private BigDecimal salaire;
 	private Employe superieur;
 	private Departement departement;
+
+	public Employe(String nom) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Employe(String nom, Departement dept, Employe superieur) {
+		// TODO Auto-generated constructor stub
+	}
 
 	public BigDecimal getSalaire() {
 		return salaire;

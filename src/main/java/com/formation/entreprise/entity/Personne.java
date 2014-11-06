@@ -1,4 +1,4 @@
-package jpa;
+package com.formation.entreprise.entity;
 
 public class Personne {
 
@@ -8,7 +8,7 @@ public class Personne {
 	public int getId() {
 		return id;
 	}
-	
+
 	public String getNom() {
 		return nom;
 	}

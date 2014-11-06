@@ -1,16 +1,19 @@
-package jpa;
-
+package com.formation.entreprise.entity;
 
 public class Client extends Personne {
 
-  private Adresse adresse;
+	private Adresse adresse;
 
-  public Adresse getAdresse() {
-    return adresse;
-  }
+	public Client(String nom, Adresse adresse) {
+		// TODO Auto-generated constructor stub
+	}
 
-  public void setAdresse(Adresse adresse) {
-    this.adresse = adresse;
-  }
+	public Adresse getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
 
 }

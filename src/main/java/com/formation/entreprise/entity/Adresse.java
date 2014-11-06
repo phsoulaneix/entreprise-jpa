@@ -1,36 +1,37 @@
-package jpa;
-
-import java.util.Collection;
-
+package com.formation.entreprise.entity;
 
 public class Adresse {
 
-  private int numero;
-  private String rue;
-  private String ville;
+	private int numero;
+	private String rue;
+	private String ville;
 
-  public int getNumero() {
-    return numero;
-  }
+	public Adresse(int numero, String rue, String ville) {
+		// TODO Auto-generated constructor stub
+	}
 
-  public void setNumero(int numero) {
-    this.numero = numero;
-  }
+	public int getNumero() {
+		return numero;
+	}
 
-  public String getRue() {
-    return rue;
-  }
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
 
-  public void setRue(String rue) {
-    this.rue = rue;
-  }
+	public String getRue() {
+		return rue;
+	}
 
-  public String getVille() {
-    return ville;
-  }
+	public void setRue(String rue) {
+		this.rue = rue;
+	}
 
-  public void setVille(String ville) {
-    this.ville = ville;
-  }
+	public String getVille() {
+		return ville;
+	}
+
+	public void setVille(String ville) {
+		this.ville = ville;
+	}
 
 }
