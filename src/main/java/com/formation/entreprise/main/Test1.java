@@ -27,7 +27,6 @@ public class Test1 {
 					"Nantes");
 			em.persist(dept);
 			em.persist(dept2);
-			em.persist(dept3);
 			dept.setLieu("Paris");
 			tx.commit();
 		} catch (final Exception e) {

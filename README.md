@@ -43,6 +43,17 @@ Juste pour tester, vous allez travailler avec uniquement les départements, sans
 3. A la fin de l'exécution de cette méthode main, la base de données devra contenir les données associées aux départements ajoutés dans la méthode main. Vérifiez-le. Remarquez aussi que le département de Nantes n'a pas été enregistré dans la base de données.
 4. Étudiez ce qui est affiché lors de l'exécution de la classe, en particulier les définitions des tables créées par JPA. Vous étudierez ces définitions à chaque fois que vous modifierez votre modèle objet dans les prochains exercices pour voir comment JPA effectue le mapping objet-relationnel.
 
+Langage d'interrogation de JPA
+-------------------------------
+
+Commencez par modifier le fichier persistence.xml pour ne pas écraser les tables existantes : remplacez drop-and-create par create.
+
+1. Cette fois-ci vous allez écrire une classe Test3 qui va récupérer tous les employés du département "DIRECTION" (supposez que le nom du département est toujours donné en majuscule ; attention, le nom dans la base n'est pas toujours en majuscule) et qui affiche ensuite leur nom. Le nom du département devra être un paramètre de la requête. La réponse ne devra pas tenir compte de la casse dans le nom du département. Dans cette question et la suivante vous utiliserez des **requêtes dynamiques**. (par exemple, avec une requette de ce type : "select e from Employe as e where upper(e.departement.nom) = :nomDept";" 
+2. Ecrivez une 2ème version du programme qui ne récupère pas les employés mais seulement leur nom et leur salaire dans la base de données et qui les affiche.
+3. Ecrivez une 3ème version qui affiche encore les noms des employés, en utilisant une **requête nommée**. (A réaliser avec l'annotation @NamedQuery sur l'entity)
+4. Utilisez la requête de la première version pour augmenter de 5 % le salaire des employés récupérés et pour enregistrer les modifications dans la base.
+5. Mettez tous les salaires des employés à 2200 euros par une modification **"en volume"** (avec un createQuery). Vérifiez que cette opération n'a pas modifié les entités en mémoire. A cause de ce fait, il ne faut pas lancer une modification en volume si le contexte de persistance contient déjà des entités. Il est tout de même possible de synchroniser une entité en mémoire avec les valeurs de la base de données. Comment faire ? Testez. 
+
 Héritage et association 1:N
 ------------------------
 
