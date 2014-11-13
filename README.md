@@ -43,6 +43,21 @@ Juste pour tester, vous allez travailler avec uniquement les départements, sans
 3. A la fin de l'exécution de cette méthode main, la base de données devra contenir les données associées aux départements ajoutés dans la méthode main. Vérifiez-le. Remarquez aussi que le département de Nantes n'a pas été enregistré dans la base de données.
 4. Étudiez ce qui est affiché lors de l'exécution de la classe, en particulier les définitions des tables créées par JPA. Vous étudierez ces définitions à chaque fois que vous modifierez votre modèle objet dans les prochains exercices pour voir comment JPA effectue le mapping objet-relationnel.
 
+
+
+Héritage et association 1:N
+------------------------
+
+Enlevez les commentaires que vous avez mis dans la question précédente dans la classe Departement pour tout ce qui est lié à l'association avec la classe Employe. Complétez les classes Personne, Employe et Client. Vous les utiliserez la classe Test2.
+
+Utilisez la stratégie "une seule table par arborescence d'héritage".
+
+La classe Adresse ne sera pas une entité mais une classe insérée (Embedded).
+
+A la fin de l'exécution de cette méthode main, la base de données devra contenir les bonnes informations. 
+
+Vérifiez-le.
+
 Langage d'interrogation de JPA
 -------------------------------
 
@@ -53,16 +68,7 @@ Commencez par modifier le fichier persistence.xml pour ne pas écraser les table
 3. Ecrivez une 3ème version qui affiche encore les noms des employés, en utilisant une **requête nommée**. (A réaliser avec l'annotation @NamedQuery sur l'entity)
 4. Utilisez la requête de la première version pour augmenter de 5 % le salaire des employés récupérés et pour enregistrer les modifications dans la base.
 5. Mettez tous les salaires des employés à 2200 euros par une modification **"en volume"** (avec un createQuery). Vérifiez que cette opération n'a pas modifié les entités en mémoire. A cause de ce fait, il ne faut pas lancer une modification en volume si le contexte de persistance contient déjà des entités. Il est tout de même possible de synchroniser une entité en mémoire avec les valeurs de la base de données. Comment faire ? Testez. 
-
-Héritage et association 1:N
-------------------------
-
-Enlevez les commentaires que vous avez mis dans la question précédente dans la classe Departement pour tout ce qui est lié à l'association avec la classe Employe. Complétez les classes Personne, Employe et Client. Vous les utiliserez la classe Test2.
-
-Utilisez la stratégie "une seule table par arborescence d'héritage".
-
-A la fin de l'exécution de cette méthode main, la base de données devra contenir les bonnes informations. Vérifiez-le.
-
+6. 
 Association M:N
 ---------------
 Complétez la classe Projet écrivez une classe Test4 dont la méthode main crée 3 employés, 2 projets et répartit les 3 employés dans ces 2 projets.
@@ -117,3 +123,23 @@ Ajoutez un attribut de version (@Version) dans l'entité Departement.
 Génération du schéma de la base de données
 -----------------------------------------
 Modifier le nom du département pour qu'il soit limité à la longueur 25 dans la table DEPARTEMENT générée automatiquement.
+
+DAO
+-------------
+Rajouter des DAO pour manipuler les entites (à mettre dans un package DAO). Les DAO devront avoir les méthodes persit, find, delete et tous autres méthodes utiles. Les DAO aura un attribut EntityManager qui sera passé via le contructeur.
+
+Manager
+------------------
+Rajouter un managers  EntrepriseManagerpour manipuler les DAO (à mettre dans un package manager). Le manager fournira EntityManager au DAO.
+Dans ce manager, mettre les méthodes suivantes :
+* void createEmployer(Employer enployer)
+* void createClient(Client client)
+* void createProjet(Projet projet, List<Employer> listDesEmployerQuiParticipeAuProjet)
+* Boolean saveEmployer(Employer enployer)
+* Boolean saveClient(Client client)
+* Boolean saveProjet(Projet projet)
+* List<Employer> findEmployer()
+* List<Employer> findEmployerWithoutProjet()
+* List<Employer> findEmployerWithProjet()
+* ...
+
