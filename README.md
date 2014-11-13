@@ -128,9 +128,16 @@ DAO
 -------------
 Rajouter des DAO pour manipuler les entites (à mettre dans un package DAO). Les DAO devront avoir les méthodes persit, find, delete et tous autres méthodes utiles. Les DAO aura un attribut EntityManager qui sera passé via le contructeur.
 
+
+L'utilisation d'une interface DAO et des classes ........DAOImpl est fortement conseillé.
+
+
 Manager
 ------------------
-Rajouter un managers  EntrepriseManagerpour manipuler les DAO (à mettre dans un package manager). Le manager fournira EntityManager au DAO.
+Rajouter un managers EntrepriseManager pour manipuler les DAO (à mettre dans un package manager). Le manager fournira EntityManager au DAO. Le manager peut utiliser plusieurs DAO dans une même méthode. Seul le manager à le droit d'utilise les DAO. 
+
+L'utilisation d'une interface EntrepriseManager et d'une classe EntrepriseManagerImpl est fortement conseillé.
+
 Dans ce manager, mettre les méthodes suivantes :
 * void createEmployer(Employer enployer)
 * void createClient(Client client)
