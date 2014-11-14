@@ -68,7 +68,7 @@ Commencez par modifier le fichier persistence.xml pour ne pas écraser les table
 3. Ecrivez une 3ème version qui affiche encore les noms des employés, en utilisant une **requête nommée**. (A réaliser avec l'annotation @NamedQuery sur l'entity)
 4. Utilisez la requête de la première version pour augmenter de 5 % le salaire des employés récupérés et pour enregistrer les modifications dans la base.
 5. Mettez tous les salaires des employés à 2200 euros par une modification **"en volume"** (avec un createQuery). Vérifiez que cette opération n'a pas modifié les entités en mémoire. A cause de ce fait, il ne faut pas lancer une modification en volume si le contexte de persistance contient déjà des entités. Il est tout de même possible de synchroniser une entité en mémoire avec les valeurs de la base de données. Comment faire ? Testez. 
-6. 
+
 
 Association M:N
 ---------------
