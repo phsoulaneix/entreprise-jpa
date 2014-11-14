@@ -69,6 +69,7 @@ Commencez par modifier le fichier persistence.xml pour ne pas écraser les table
 4. Utilisez la requête de la première version pour augmenter de 5 % le salaire des employés récupérés et pour enregistrer les modifications dans la base.
 5. Mettez tous les salaires des employés à 2200 euros par une modification **"en volume"** (avec un createQuery). Vérifiez que cette opération n'a pas modifié les entités en mémoire. A cause de ce fait, il ne faut pas lancer une modification en volume si le contexte de persistance contient déjà des entités. Il est tout de même possible de synchroniser une entité en mémoire avec les valeurs de la base de données. Comment faire ? Testez. 
 6. 
+
 Association M:N
 ---------------
 Complétez la classe Projet écrivez une classe Test4 dont la méthode main crée 3 employés, 2 projets et répartit les 3 employés dans ces 2 projets.
